@@ -3,9 +3,9 @@ import Sidebar from '../../components/sidebar/Sidebar'
 import { Context } from '../../context/Context'
 import { useContext, useState } from 'react'
 import axios from 'axios'
+import { PF } from '../../dts'
 
 export default function Settings() {
-    const PF = "http://localhost:5000/images/";
     const { user, dispatch } = useContext(Context);
     const [file, setFile] = useState(null);
     const [username, setUsername] = useState(user.username);

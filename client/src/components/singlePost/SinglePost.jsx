@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { Context } from '../../context/Context';
+import { PF } from "../../dts"
 
 export default function SinglePost() {
 
@@ -11,7 +12,6 @@ export default function SinglePost() {
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
     const { user } = useContext(Context);
-    const PF = "http://localhost:5000/images/";
 
     //for Update
     const [title, setTitle] = useState("");

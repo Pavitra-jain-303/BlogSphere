@@ -1,0 +1,1 @@
+export const PF = "https://blogsphere-api.onrender.com/images"
