@@ -3,7 +3,6 @@ import Sidebar from '../../components/sidebar/Sidebar'
 import { Context } from '../../context/Context'
 import { useContext, useState } from 'react'
 import axios from 'axios'
-import { UpdateStart } from '../../context/Action'
 
 export default function Settings() {
     const PF = "http://localhost:5000/images/";
