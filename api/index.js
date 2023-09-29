@@ -13,7 +13,13 @@ const cors = require('cors');
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname,"images")));
-app.use(cors());
+const corsOptions = {
+    origin: 'https://magenta-peony-05ba06.netlify.app/',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Include cookies and HTTP authentication headers
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect(process.env.MONGO_URL)
     .then(console.log("Connected to mongo"))
