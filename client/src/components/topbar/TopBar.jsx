@@ -53,7 +53,7 @@ export default function TopBar() {
                         <Link to="/settings" className='link'>
                             <img
                                 className='topImg'
-                                src={`${PF}${user.profilePic}`}
+                                src={PF + user.profilePic}
                                 alt=""
                             />
                         </Link>
