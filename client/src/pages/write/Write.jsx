@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import './Write.css';
 import { Context } from '../../context/Context';
 import axios from 'axios';
+import { api } from "../../dts"
 
 export default function Write() {
 
@@ -25,7 +26,7 @@ export default function Write() {
             data.append("file", file);
             newPost.photo = filename;
             try {
-                await axios.post("/upload", data);
+                await axios.post(api + "/upload", data);
             } catch (err) {
                 console.log(err);
             }
@@ -35,9 +36,9 @@ export default function Write() {
         // console.log(newPost);
 
         try {
-            const res = await axios.post("/posts", newPost);
+            const res = await axios.post(api + "/posts", newPost);
             // console.log(res);
-            window.location.replace("/post/" + res.data._id);
+            window.location.replace(api + "/post/" + res.data._id);
         } catch (err) {
             console.log(err);
         }

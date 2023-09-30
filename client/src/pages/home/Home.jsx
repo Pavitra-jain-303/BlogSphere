@@ -4,7 +4,8 @@ import Header from '../../components/header/Header'
 import Posts from '../../components/posts/Posts'
 import Sidebar from '../../components/sidebar/Sidebar'
 import './Home.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import { api } from "../../dts"
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ export default function Home() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await axios.get("/posts" + search);
+                const res = await axios.get(api + "/posts" + search);
                 setPosts(res.data);
             } catch (error) {
                 console.error("Error fetching posts:", error);
