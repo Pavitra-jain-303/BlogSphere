@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/images", express.static(path.join(__dirname,"images")));
 
 const corsOptions = {
-    origin: 'https://magenta-peony-05ba06.netlify.app',
+    origin: 'https://pavitra-jain-blogsphere.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Include cookies and HTTP authentication headers '', 
 };
