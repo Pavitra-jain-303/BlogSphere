@@ -3,6 +3,7 @@ import './Login.css'
 import { Link } from "react-router-dom"
 import { Context } from '../../context/Context';
 import axios from 'axios';
+import { api } from '../../dts';
 
 export default function Login() {
     const userRef = useRef();
@@ -17,7 +18,7 @@ export default function Login() {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             });
-            
+
             dispatch({
                 type: "LOGIN_SUCCESS",
                 payload: res.data
