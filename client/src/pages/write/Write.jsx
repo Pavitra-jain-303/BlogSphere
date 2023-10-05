@@ -38,7 +38,7 @@ export default function Write() {
         try {
             const res = await axios.post(api + "/posts", newPost);
             // console.log(res);
-            window.location.replace(api + "/post/" + res.data._id);
+            window.location.replace(api + "/posts/" + res.data._id);
         } catch (err) {
             console.log(err);
         }
